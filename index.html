@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="RECONMAIL - AI-Assisted Cryptographic Security Assessment for Email Communications"
+    >
+
+    <title>RECONMAIL | Security Assessment Platform</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         APPLICATION
+    =============================== -->
+
+    <div class="app">
+
+        <!-- ==============================
+             SIDEBAR
+        =============================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Brand -->
+            <div class="sidebar-brand">
+
+                <div class="brand-mark">
+                    R
+                </div>
+
+                <div class="brand-text">
+                    <h1>RECONMAIL</h1>
+                    <span>Security Assessment</span>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="sidebar-navigation" aria-label="Primary navigation">
+
+                <!-- Overview -->
+                <div class="nav-group">
+
+                    <div class="nav-group-title">
+                        OVERVIEW
+                    </div>
+
+                    <button
+                        class="nav-item active"
+                        data-section="dashboard"
+                        type="button"
+                    >
+                        <span class="nav-icon">D</span>
+                        <span>Dashboard</span>
+                    </button>
+
+                </div>
+
+
+                <!-- Analysis -->
+                <div class="nav-group">
+
+                    <div class="nav-group-title">
+                        ANALYSIS
+                    </div>
+
+                    <button
+                        class="nav-item"
+                        data-section="sessions"
+                        type="button"
+                    >
+                        <span class="nav-icon">S</span>
+                        <span>Sessions</span>
+                    </button>
+
+                    <button
+                        class="nav-item"
+                        data-section="findings"
+                        type="button"
+                    >
+                        <span class="nav-icon">F</span>
+                        <span>Findings</span>
+                    </button>
+
+                    <button
+                        class="nav-item"
+                        data-section="tls"
+                        type="button"
+                    >
+                        <span class="nav-icon">T</span>
+                        <span>TLS Analysis</span>
+                    </button>
+
+                    <button
+                        class="nav-item"
+                        data-section="certificates"
+                        type="button"
+                    >
+                        <span class="nav-icon">C</span>
+                        <span>Certificates</span>
+                    </button>
+
+                </div>
+
+
+                <!-- Intelligence -->
+                <div class="nav-group">
+
+                    <div class="nav-group-title">
+                        INTELLIGENCE
+                    </div>
+
+                    <button
+                        class="nav-item"
+                        data-section="ai-analyst"
+                        type="button"
+                    >
+                        <span class="nav-icon">AI</span>
+                        <span>AI Analyst</span>
+                    </button>
+
+                </div>
+
+
+                <!-- Output -->
+                <div class="nav-group">
+
+                    <div class="nav-group-title">
+                        OUTPUT
+                    </div>
+
+                    <button
+                        class="nav-item"
+                        data-section="reports"
+                        type="button"
+                    >
+                        <span class="nav-icon">R</span>
+                        <span>Reports</span>
+                    </button>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Capture Status -->
+            <div class="capture-status">
+
+                <div class="capture-file">
+
+                    <div class="capture-icon">
+                        PCAP
+                    </div>
+
+                    <div class="capture-details">
+                        <strong>demo_capture.pcap</strong>
+                        <span>Analysis Complete</span>
+                    </div>
+
+                </div>
+
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    Complete
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==============================
+             MAIN APPLICATION
+        =============================== -->
+
+        <div class="main-wrapper">
+
+            <!-- ==============================
+                 TOP HEADER
+            =============================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        type="button"
+                        aria-label="Open navigation"
+                    >
+                        Menu
+                    </button>
+
+                    <div class="breadcrumb">
+
+                        <span>RECONMAIL</span>
+
+                        <span class="breadcrumb-separator">
+                            /
+                        </span>
+
+                        <strong id="currentPageName">
+                            Dashboard
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="analysis-status">
+
+                        <span class="status-dot"></span>
+
+                        <span>
+                            Analysis Complete
+                        </span>
+
+                    </div>
+
+                    <div class="system-label">
+                        SYNTHETIC ANALYSIS
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==============================
+                 MAIN CONTENT
+            =============================== -->
+
+            <main class="main-content" id="mainContent">
+
+
+                <!-- ==========================================
+                     DASHBOARD
+                =========================================== -->
+
+                <section
+                    class="page-section active"
+                    id="dashboard"
+                    aria-labelledby="dashboard-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                SECURITY OVERVIEW
+                            </span>
+
+                            <h2 id="dashboard-title">
+                                Security Dashboard
+                            </h2>
+
+                            <p>
+                                Cryptographic security posture of the analyzed
+                                email communication sessions.
+                            </p>
+
+                        </div>
+
+                        <div class="page-actions">
+
+                            <button
+                                class="button button-secondary"
+                                type="button"
+                            >
+                                Export Report
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Posture Score -->
+
+                    <div class="dashboard-grid">
+
+                        <article class="metric-card posture-card">
+
+                            <div class="metric-header">
+
+                                <span>
+                                    SECURITY POSTURE
+                                </span>
+
+                                <span class="metric-status moderate">
+                                    MODERATE
+                                </span>
+
+                            </div>
+
+                            <div class="posture-score">
+
+                                <strong id="postureScore">
+                                    78
+                                </strong>
+
+                                <span>/100</span>
+
+                            </div>
+
+                            <div class="score-bar">
+
+                                <div
+                                    class="score-progress"
+                                    id="scoreProgress"
+                                    style="width: 78%;"
+                                ></div>
+
+                            </div>
+
+                            <p class="metric-description">
+                                Overall cryptographic security posture
+                                across analyzed sessions.
+                            </p>
+
+                        </article>
+
+
+                        <!-- Sessions -->
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+
+                                <span>
+                                    TOTAL SESSIONS
+                                </span>
+
+                            </div>
+
+                            <div class="metric-value">
+                                128
+                            </div>
+
+                            <div class="metric-label">
+                                Analyzed network sessions
+                            </div>
+
+                        </article>
+
+
+                        <!-- Findings -->
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+
+                                <span>
+                                    FINDINGS
+                                </span>
+
+                            </div>
+
+                            <div class="metric-value">
+                                17
+                            </div>
+
+                            <div class="metric-label">
+                                Security findings detected
+                            </div>
+
+                        </article>
+
+
+                        <!-- Certificates -->
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+
+                                <span>
+                                    CERTIFICATES
+                                </span>
+
+                            </div>
+
+                            <div class="metric-value">
+                                34
+                            </div>
+
+                            <div class="metric-label">
+                                X.509 certificates observed
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Dashboard Analysis -->
+
+                    <div class="content-grid">
+
+                        <!-- Protocol Distribution -->
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        NETWORK ANALYSIS
+                                    </span>
+
+                                    <h3>
+                                        Protocol Distribution
+                                    </h3>
+
+                                </div>
+
+                                <span class="panel-meta">
+                                    128 sessions
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="chart-container"
+                                id="protocolChart"
+                            >
+                                <div class="chart-placeholder">
+                                    Protocol Chart
+                                </div>
+                            </div>
+
+                        </article>
+
+
+                        <!-- Risk Distribution -->
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        RISK ANALYSIS
+                                    </span>
+
+                                    <h3>
+                                        Risk Distribution
+                                    </h3>
+
+                                </div>
+
+                                <span class="panel-meta">
+                                    17 findings
+                                </span>
+
+                            </div>
+
+                            <div
+                                class="chart-container"
+                                id="riskChart"
+                            >
+                                <div class="chart-placeholder">
+                                    Risk Chart
+                                </div>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- TLS Overview -->
+
+                    <article class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    TRANSPORT SECURITY
+                                </span>
+
+                                <h3>
+                                    TLS Version Distribution
+                                </h3>
+
+                            </div>
+
+                            <span class="panel-meta">
+                                94 TLS sessions
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="tls-overview"
+                            id="tlsOverview"
+                        >
+
+                            <div class="tls-item">
+
+                                <div class="tls-item-header">
+
+                                    <span>
+                                        TLS 1.3
+                                    </span>
+
+                                    <strong>
+                                        62%
+                                    </strong>
+
+                                </div>
+
+                                <div class="mini-progress">
+
+                                    <div
+                                        class="mini-progress-bar"
+                                        style="width: 62%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="tls-item">
+
+                                <div class="tls-item-header">
+
+                                    <span>
+                                        TLS 1.2
+                                    </span>
+
+                                    <strong>
+                                        31%
+                                    </strong>
+
+                                </div>
+
+                                <div class="mini-progress">
+
+                                    <div
+                                        class="mini-progress-bar"
+                                        style="width: 31%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="tls-item">
+
+                                <div class="tls-item-header">
+
+                                    <span>
+                                        TLS 1.1
+                                    </span>
+
+                                    <strong>
+                                        7%
+                                    </strong>
+
+                                </div>
+
+                                <div class="mini-progress">
+
+                                    <div
+                                        class="mini-progress-bar warning"
+                                        style="width: 7%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Fix This First -->
+
+                    <article class="panel priority-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    PRIORITIZED REMEDIATION
+                                </span>
+
+                                <h3>
+                                    Fix This First
+                                </h3>
+
+                            </div>
+
+                            <button
+                                class="text-button"
+                                type="button"
+                                data-section="findings"
+                            >
+                                View all findings
+                            </button>
+
+                        </div>
+
+
+                        <div class="priority-list">
+
+                            <div class="priority-item">
+
+                                <div class="priority-number">
+                                    01
+                                </div>
+
+                                <div class="priority-content">
+
+                                    <div class="priority-title-row">
+
+                                        <h4>
+                                            Expired X.509 Certificate
+                                        </h4>
+
+                                        <span class="severity high">
+                                            HIGH
+                                        </span>
+
+                                    </div>
+
+                                    <p>
+                                        An expired certificate was observed
+                                        during a TLS session.
+                                    </p>
+
+                                    <span class="priority-meta">
+                                        Session #003
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="priority-item">
+
+                                <div class="priority-number">
+                                    02
+                                </div>
+
+                                <div class="priority-content">
+
+                                    <div class="priority-title-row">
+
+                                        <h4>
+                                            Deprecated TLS Configuration
+                                        </h4>
+
+                                        <span class="severity high">
+                                            HIGH
+                                        </span>
+
+                                    </div>
+
+                                    <p>
+                                        A session negotiated a deprecated
+                                        TLS configuration.
+                                    </p>
+
+                                    <span class="priority-meta">
+                                        Session #003
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="priority-item">
+
+                                <div class="priority-number">
+                                    03
+                                </div>
+
+                                <div class="priority-content">
+
+                                    <div class="priority-title-row">
+
+                                        <h4>
+                                            Weak Cryptographic Configuration
+                                        </h4>
+
+                                        <span class="severity medium">
+                                            MEDIUM
+                                        </span>
+
+                                    </div>
+
+                                    <p>
+                                        Cryptographic parameters require
+                                        review against current security policy.
+                                    </p>
+
+                                    <span class="priority-meta">
+                                        Session #017
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- ==========================================
+                     SESSIONS
+                =========================================== -->
+
+                <section
+                    class="page-section"
+                    id="sessions"
+                    aria-labelledby="sessions-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                SESSION ANALYSIS
+                            </span>
+
+                            <h2 id="sessions-title">
+                                Network Sessions
+                            </h2>
+
+                            <p>
+                                Reconstructed email communication sessions
+                                identified in the captured traffic.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="table-toolbar">
+
+                            <div class="search-box">
+
+                                <input
+                                    type="search"
+                                    id="sessionSearch"
+                                    placeholder="Search sessions..."
+                                >
+
+                            </div>
+
+                            <div class="filter-group">
+
+                                <button
+                                    class="filter-button active"
+                                    type="button"
+                                    data-session-filter="all"
+                                >
+                                    All
+                                </button>
+
+                                <button
+                                    class="filter-button"
+                                    type="button"
+                                    data-session-filter="high"
+                                >
+                                    High Risk
+                                </button>
+
+                                <button
+                                    class="filter-button"
+                                    type="button"
+                                    data-session-filter="medium"
+                                >
+                                    Medium
+                                </button>
+
+                                <button
+                                    class="filter-button"
+                                    type="button"
+                                    data-session-filter="low"
+                                >
+                                    Low
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="data-table">
+
+                                <thead>
+
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Protocol</th>
+                                        <th>Source</th>
+                                        <th>Destination</th>
+                                        <th>TLS</th>
+                                        <th>Risk</th>
+                                        <th></th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="sessionsTableBody">
+                                    <!-- Generated by sessions.js -->
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==========================================
+                     FINDINGS
+                =========================================== -->
+
+                <section
+                    class="page-section"
+                    id="findings"
+                    aria-labelledby="findings-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                SECURITY FINDINGS
+                            </span>
+
+                            <h2 id="findings-title">
+                                Findings
+                            </h2>
+
+                            <p>
+                                Security issues identified during the
+                                cryptographic assessment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="findings-container"
+                        id="findingsContainer"
+                    >
+                        <!-- Generated by findings.js -->
+                    </div>
+
+                </section>
+
+
+                <!-- ==========================================
+                     TLS ANALYSIS
+                =========================================== -->
+
+                <section
+                    class="page-section"
+                    id="tls"
+                    aria-labelledby="tls-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                TRANSPORT SECURITY
+                            </span>
+
+                            <h2 id="tls-title">
+                                TLS Analysis
+                            </h2>
+
+                            <p>
+                                TLS versions, cipher suites, key exchange,
+                                and forward secrecy observations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-grid">
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                TLS SESSIONS
+                            </div>
+
+                            <div class="metric-value">
+                                94
+                            </div>
+
+                            <div class="metric-label">
+                                Sessions with TLS observed
+                            </div>
+
+                        </article>
+
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                TLS 1.3
+                            </div>
+
+                            <div class="metric-value">
+                                62%
+                            </div>
+
+                            <div class="metric-label">
+                                TLS version distribution
+                            </div>
+
+                        </article>
+
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                FORWARD SECRECY
+                            </div>
+
+                            <div class="metric-value">
+                                91%
+                            </div>
+
+                            <div class="metric-label">
+                                Sessions with FS established
+                            </div>
+
+                        </article>
+
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                ECDHE
+                            </div>
+
+                            <div class="metric-value">
+                                82%
+                            </div>
+
+                            <div class="metric-label">
+                                Key exchange distribution
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="content-grid">
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        TLS VERSIONS
+                                    </span>
+
+                                    <h3>
+                                        Version Distribution
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="chart-container"
+                                id="tlsVersionChart"
+                            >
+                                <div class="chart-placeholder">
+                                    TLS Version Chart
+                                </div>
+                            </div>
+
+                        </article>
+
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        CIPHER ANALYSIS
+                                    </span>
+
+                                    <h3>
+                                        Cipher Suites
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="chart-container"
+                                id="cipherChart"
+                            >
+                                <div class="chart-placeholder">
+                                    Cipher Chart
+                                </div>
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==========================================
+                     CERTIFICATES
+                =========================================== -->
+
+                <section
+                    class="page-section"
+                    id="certificates"
+                    aria-labelledby="certificates-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                X.509 ANALYSIS
+                            </span>
+
+                            <h2 id="certificates-title">
+                                Certificates
+                            </h2>
+
+                            <p>
+                                Certificate validity and cryptographic
+                                configuration observed in TLS sessions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-grid">
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                CERTIFICATES
+                            </div>
+
+                            <div class="metric-value">
+                                34
+                            </div>
+
+                            <div class="metric-label">
+                                Certificates extracted
+                            </div>
+
+                        </article>
+
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                VALID
+                            </div>
+
+                            <div class="metric-value">
+                                28
+                            </div>
+
+                            <div class="metric-label">
+                                Currently valid certificates
+                            </div>
+
+                        </article>
+
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                EXPIRED
+                            </div>
+
+                            <div class="metric-value">
+                                4
+                            </div>
+
+                            <div class="metric-label">
+                                Expired certificates
+                            </div>
+
+                        </article>
+
+
+                        <article class="metric-card">
+
+                            <div class="metric-header">
+                                WEAK
+                            </div>
+
+                            <div class="metric-value">
+                                2
+                            </div>
+
+                            <div class="metric-label">
+                                Cryptographically weak certificates
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div
+                        class="certificates-grid"
+                        id="certificatesGrid"
+                    >
+                        <!-- Generated by certificates.js -->
+                    </div>
+
+                </section>
+
+
+                <!-- ==========================================
+                     AI ANALYST
+                =========================================== -->
+
+                <section
+                    class="page-section"
+                    id="ai-analyst"
+                    aria-labelledby="ai-analyst-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                SECURITY INTELLIGENCE
+                            </span>
+
+                            <h2 id="ai-analyst-title">
+                                AI Security Analyst
+                            </h2>
+
+                            <p>
+                                Evidence-based interpretation of the
+                                cryptographic security findings.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-layout">
+
+                        <article class="panel ai-summary-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        ANALYSIS STATUS
+                                    </span>
+
+                                    <h3>
+                                        Analysis Completed
+                                    </h3>
+
+                                </div>
+
+                                <span class="ai-status">
+                                    Ready
+                                </span>
+
+                            </div>
+
+
+                            <div class="ai-summary">
+
+                                <div class="ai-summary-stat">
+
+                                    <strong>
+                                        17
+                                    </strong>
+
+                                    <span>
+                                        Findings analyzed
+                                    </span>
+
+                                </div>
+
+                                <div class="ai-summary-stat">
+
+                                    <strong>
+                                        128
+                                    </strong>
+
+                                    <span>
+                                        Sessions reviewed
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ai-observations">
+
+                                <h4>
+                                    Top Observations
+                                </h4>
+
+                                <ul>
+
+                                    <li>
+                                        Expired certificate detected
+                                    </li>
+
+                                    <li>
+                                        Deprecated TLS configuration identified
+                                    </li>
+
+                                    <li>
+                                        Weak cryptographic configuration
+                                        requires review
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        SECURITY EXPLANATION
+                                    </span>
+
+                                    <h3>
+                                        Why Does This Matter?
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="ai-response"
+                                id="aiResponse"
+                            >
+
+                                <p>
+                                    The observed findings indicate that
+                                    some email communication sessions use
+                                    cryptographic configurations that may
+                                    require remediation.
+                                </p>
+
+                                <p>
+                                    The highest-priority issue is the
+                                    expired certificate associated with
+                                    Session #003.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-eyebrow">
+                                        RECOMMENDATIONS
+                                    </span>
+
+                                    <h3>
+                                        Recommended Actions
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+                            <div class="recommendation-list">
+
+                                <div class="recommendation-item">
+
+                                    <span class="recommendation-number">
+                                        01
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            Replace expired certificates
+                                        </strong>
+
+                                        <p>
+                                            Renew certificates before their
+                                            validity period expires.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="recommendation-item">
+
+                                    <span class="recommendation-number">
+                                        02
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            Review TLS configuration
+                                        </strong>
+
+                                        <p>
+                                            Validate supported TLS versions
+                                            and cryptographic parameters.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="recommendation-item">
+
+                                    <span class="recommendation-number">
+                                        03
+                                    </span>
+
+                                    <div>
+                                        <strong>
+                                            Review weak cryptographic settings
+                                        </strong>
+
+                                        <p>
+                                            Evaluate algorithms and key
+                                            parameters against security policy.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==========================================
+                     REPORTS
+                =========================================== -->
+
+                <section
+                    class="page-section"
+                    id="reports"
+                    aria-labelledby="reports-title"
+                >
+
+                    <div class="page-header">
+
+                        <div>
+
+                            <span class="page-eyebrow">
+                                FORENSIC OUTPUT
+                            </span>
+
+                            <h2 id="reports-title">
+                                Reports
+                            </h2>
+
+                            <p>
+                                Export the results of the cryptographic
+                                security assessment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-grid">
+
+                        <article class="report-card">
+
+                            <div class="report-type">
+                                JSON
+                            </div>
+
+                            <h3>
+                                JSON Forensic Report
+                            </h3>
+
+                            <p>
+                                Machine-readable security findings,
+                                session data, and cryptographic observations.
+                            </p>
+
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-report="json"
+                            >
+                                Generate Report
+                            </button>
+
+                        </article>
+
+
+                        <article class="report-card">
+
+                            <div class="report-type">
+                                PDF
+                            </div>
+
+                            <h3>
+                                PDF Security Report
+                            </h3>
+
+                            <p>
+                                Structured forensic assessment suitable
+                                for security review and documentation.
+                            </p>
+
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-report="pdf"
+                            >
+                                Generate Report
+                            </button>
+
+                        </article>
+
+
+                        <article class="report-card">
+
+                            <div class="report-type">
+                                HTML
+                            </div>
+
+                            <h3>
+                                HTML Security Report
+                            </h3>
+
+                            <p>
+                                Interactive browser-based representation
+                                of the assessment results.
+                            </p>
+
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-report="html"
+                            >
+                                Generate Report
+                            </button>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         SESSION DETAILS MODAL
+    =========================================== -->
+
+    <div
+        class="modal"
+        id="sessionModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-modal></div>
+
+        <div class="modal-container">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-eyebrow">
+                        SESSION DETAILS
+                    </span>
+
+                    <h3 id="sessionModalTitle">
+                        Session #003
+                    </h3>
+
+                </div>
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-close-modal
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                class="modal-body"
+                id="sessionModalBody"
+            >
+
+                <!-- Filled by JavaScript -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         EVIDENCE MODAL
+    =========================================== -->
+
+    <div
+        class="modal"
+        id="evidenceModal"
+        aria-hidden="true"
+    >
+
+        <div class="modal-overlay" data-close-modal></div>
+
+        <div class="modal-container">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="modal-eyebrow">
+                        FORENSIC EVIDENCE
+                    </span>
+
+                    <h3>
+                        Evidence Details
+                    </h3>
+
+                </div>
+
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-close-modal
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                class="modal-body"
+                id="evidenceModalBody"
+            >
+
+                <!-- Filled by JavaScript -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         NOTIFICATION
+    =========================================== -->
+
+    <div
+        class="notification"
+        id="notification"
+        aria-live="polite"
+    >
+        <span id="notificationMessage"></span>
+    </div>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <!-- Synthetic Data -->
+    <script src="data/dashboard-data.js" defer></script>
+    <script src="data/sessions-data.js" defer></script>
+    <script src="data/findings-data.js" defer></script>
+    <script src="data/certificates-data.js" defer></script>
+
+    <!-- Application -->
+    <script src="js/app.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+    <script src="js/sessions.js" defer></script>
+    <script src="js/findings.js" defer></script>
+    <script src="js/tls.js" defer></script>
+    <script src="js/certificates.js" defer></script>
+    <script src="js/ai-analyst.js" defer></script>
+    <script src="js/reports.js" defer></script>
+
+</body>
+
+</html>

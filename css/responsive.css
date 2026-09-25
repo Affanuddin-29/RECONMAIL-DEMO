@@ -1,0 +1,477 @@
+/* =========================================================
+   RECONMAIL
+   Responsive Styles
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (width <= 1100px) {
+
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    .main-content {
+        padding: 24px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .findings-container {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ai-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-layout .ai-summary-panel {
+        grid-column: auto;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 850px
+   ========================================================= */
+
+@media (width <= 850px) {
+
+    :root {
+        --sidebar-width: 0px;
+    }
+
+    /* -----------------------------------------------------
+       Sidebar
+       ----------------------------------------------------- */
+
+    .sidebar {
+        width: 250px;
+
+        transform: translateX(-100%);
+
+        transition: transform 220ms ease;
+
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .main-wrapper {
+        margin-left: 0;
+    }
+
+    /* -----------------------------------------------------
+       Mobile menu
+       ----------------------------------------------------- */
+
+    .mobile-menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 32px;
+
+        padding: 0 10px;
+        margin-right: 12px;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+
+        border-radius: 5px;
+
+        color: var(--text-secondary);
+
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .mobile-menu-button:hover {
+        background: var(--surface-hover);
+        color: var(--text-primary);
+    }
+
+    /* -----------------------------------------------------
+       Topbar
+       ----------------------------------------------------- */
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .system-label {
+        display: none;
+    }
+
+    /* -----------------------------------------------------
+       Main content
+       ----------------------------------------------------- */
+
+    .main-content {
+        padding: 22px 20px;
+    }
+
+    /* -----------------------------------------------------
+       Dashboard
+       ----------------------------------------------------- */
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tls-overview {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* -----------------------------------------------------
+       AI Analyst
+       ----------------------------------------------------- */
+
+    .ai-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-layout .ai-summary-panel {
+        grid-column: auto;
+    }
+}
+
+
+/* =========================================================
+   LARGE MOBILE
+   <= 650px
+   ========================================================= */
+
+@media (width <= 650px) {
+
+    /* -----------------------------------------------------
+       Global
+       ----------------------------------------------------- */
+
+    body {
+        font-size: 13px;
+    }
+
+    /* -----------------------------------------------------
+       Topbar
+       ----------------------------------------------------- */
+
+    .topbar {
+        height: 60px;
+
+        padding: 0 15px;
+    }
+
+    .breadcrumb {
+        font-size: 11px;
+    }
+
+    .analysis-status {
+        display: none;
+    }
+
+    /* -----------------------------------------------------
+       Main
+       ----------------------------------------------------- */
+
+    .main-content {
+        padding: 18px 15px;
+    }
+
+    /* -----------------------------------------------------
+       Page header
+       ----------------------------------------------------- */
+
+    .page-header {
+        flex-direction: column;
+        gap: 15px;
+
+        margin-bottom: 20px;
+    }
+
+    .page-header h2 {
+        font-size: 21px;
+    }
+
+    .page-header p {
+        font-size: 11px;
+    }
+
+    .page-actions {
+        width: 100%;
+    }
+
+    .page-actions .button {
+        width: 100%;
+    }
+
+    /* -----------------------------------------------------
+       Dashboard
+       ----------------------------------------------------- */
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-card {
+        min-height: 125px;
+    }
+
+    .posture-score strong {
+        font-size: 36px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* -----------------------------------------------------
+       Panels
+       ----------------------------------------------------- */
+
+    .panel {
+        padding: 15px;
+    }
+
+    .panel-header {
+        gap: 10px;
+    }
+
+    .panel-meta {
+        display: none;
+    }
+
+    /* -----------------------------------------------------
+       Charts
+       ----------------------------------------------------- */
+
+    .chart-container {
+        min-height: 190px;
+    }
+
+    /* -----------------------------------------------------
+       Priority findings
+       ----------------------------------------------------- */
+
+    .priority-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .priority-item {
+        gap: 10px;
+    }
+
+    .priority-number {
+        width: 22px;
+    }
+
+    /* -----------------------------------------------------
+       Tables
+       ----------------------------------------------------- */
+
+    .table-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: none;
+    }
+
+    .filter-group {
+        overflow-x: auto;
+        padding-bottom: 2px;
+    }
+
+    .filter-button {
+        flex-shrink: 0;
+    }
+
+    .data-table {
+        min-width: 650px;
+    }
+
+    /* -----------------------------------------------------
+       Findings
+       ----------------------------------------------------- */
+
+    .findings-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* -----------------------------------------------------
+       Certificates
+       ----------------------------------------------------- */
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* -----------------------------------------------------
+       AI Analyst
+       ----------------------------------------------------- */
+
+    .ai-summary {
+        gap: 30px;
+    }
+
+    .ai-summary-stat strong {
+        font-size: 24px;
+    }
+
+    /* -----------------------------------------------------
+       Reports
+       ----------------------------------------------------- */
+
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-card {
+        min-height: 210px;
+    }
+
+    /* -----------------------------------------------------
+       Modal
+       ----------------------------------------------------- */
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modal-container {
+        max-height: 90vh;
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   <= 420px
+   ========================================================= */
+
+@media (width <= 420px) {
+
+    /* -----------------------------------------------------
+       Brand / sidebar
+       ----------------------------------------------------- */
+
+    .sidebar {
+        width: 235px;
+    }
+
+    /* -----------------------------------------------------
+       Main
+       ----------------------------------------------------- */
+
+    .main-content {
+        padding: 15px 12px;
+    }
+
+    /* -----------------------------------------------------
+       Breadcrumb
+       ----------------------------------------------------- */
+
+    .breadcrumb span:first-child {
+        display: none;
+    }
+
+    .breadcrumb-separator {
+        display: none;
+    }
+
+    /* -----------------------------------------------------
+       Page title
+       ----------------------------------------------------- */
+
+    .page-header h2 {
+        font-size: 19px;
+    }
+
+    /* -----------------------------------------------------
+       Metric cards
+       ----------------------------------------------------- */
+
+    .metric-value {
+        font-size: 27px;
+    }
+
+    /* -----------------------------------------------------
+       Certificate details
+       ----------------------------------------------------- */
+
+    .certificate-details {
+        grid-template-columns: 1fr;
+    }
+
+    /* -----------------------------------------------------
+       AI summary
+       ----------------------------------------------------- */
+
+    .ai-summary {
+        gap: 20px;
+    }
+
+    /* -----------------------------------------------------
+       Priority list
+       ----------------------------------------------------- */
+
+    .priority-content p {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
